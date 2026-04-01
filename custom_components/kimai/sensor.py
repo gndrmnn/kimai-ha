@@ -88,7 +88,7 @@ class ServerSensor(BaseSensor):
 class ActiveDurationSensor(BaseSensor):
     _attr_name = "Kimai Active Timesheet Duration"
     device_class = SensorDeviceClass.DURATION
-    state_class = SensorStateClass.TOTAL
+    # state_class = SensorStateClass.TOTAL
     suggested_display_precision = 0
 
     def __init__(self, coordinator: KimaiCoordinator, entry_id: str) -> None:
@@ -109,17 +109,17 @@ class ActiveDurationSensor(BaseSensor):
     def native_unit_of_measurement(self) -> str:
         return "min"
 
-    @property
-    def last_reset(self) -> datetime.datetime:
-        now = homeassistant.util.dt.now()
-        minDT = _get_minDT(self.coordinator.data["active"])
+    # @property
+    # def last_reset(self) -> datetime.datetime:
+    #     now = homeassistant.util.dt.now()
+    #     minDT = _get_minDT(self.coordinator.data["active"])
 
-        if minDT is None:
-            dayBegin = now.replace(hour=0, minute=0, second=0, microsecond=0)
-            return dayBegin
+    #     if minDT is None:
+    #         dayBegin = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    #         return dayBegin
 
-        startTimesheet = minDT.astimezone(now.tzinfo)
-        return startTimesheet
+    #     startTimesheet = minDT.astimezone(now.tzinfo)
+    #     return startTimesheet
 
 
 class ActiveStartSensor(BaseSensor):
