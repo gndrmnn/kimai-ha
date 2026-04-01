@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 import datetime
+import logging
 from datetime import timedelta
 
 import aiohttp
-import logger
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
@@ -13,7 +13,7 @@ from .const import SCAN_INTERVAL
 
 
 class KimaiCoordinator(DataUpdateCoordinator[dict]):
-    def __init__(self, hass: HomeAssistant, entry: ConfigEntry, logger: logger.Logger) -> None:
+    def __init__(self, hass: HomeAssistant, entry: ConfigEntry, logger: logging.Logger) -> None:
         self._entry = entry
         super().__init__(
             hass,
