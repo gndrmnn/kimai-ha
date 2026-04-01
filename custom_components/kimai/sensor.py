@@ -103,7 +103,7 @@ class ActiveDurationSensor(BaseSensor):
 
         delta = homeassistant.util.dt.now() - minDT
 
-        return (delta.seconds // 60) % 60
+        return (delta.seconds // 60)
 
     @property
     def native_unit_of_measurement(self) -> str:
