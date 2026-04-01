@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up Kimai API Endpoint",
+        "data": {
+          "endpoint": "Kimai API Endpoint",
+          "email": "User Email",
+          "secret": "API Secret"
+        },
+        "data_description": {
+          "endpoint": "The full Kimai API Endpoint including protocol (https://) and /api path",
+          "email": "User Email",
+          "secret": "API Secret as defined in profile settings. This is not your account password."
+        }
+      }
+    }
+  }
+}

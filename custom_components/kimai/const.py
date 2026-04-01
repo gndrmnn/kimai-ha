@@ -1,0 +1,2 @@
+DOMAIN = "kimai"
+SCAN_INTERVAL = 300

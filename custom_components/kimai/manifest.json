@@ -1,0 +1,7 @@
+{
+    "domain": "kimai",
+    "name": "Kimai",
+    "version": "0.0.0",
+    "requirements": ["aiohttp"],
+    "config_flow": true
+}
